@@ -12,6 +12,25 @@ public class PersonExampleV4 {
     private int height = DEFAULT_HEIGHT;
     private String destination = DEFAULT_DESTINATION;
 
+    // 생성자
+    public PersonExampleV4(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public PersonExampleV4(String firstName, String lastName, int age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
+    public PersonExampleV4(String firstName, String lastName, int age, int height) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.height = height;
+    }
+
     // 메서드
     public void goToOffice(final String destination) {
         this.destination = destination;
@@ -23,7 +42,18 @@ public class PersonExampleV4 {
     }
 
     private static String getKoreanName(String firstName, String lastName) {
-        return lastName + " " + firstName;
+        return lastName + " " + firstName + " ";
+    }
+
+    public static void main(String[] args) {
+        PersonExampleV4 person = new PersonExampleV4("Java", "Kim");
+
+        String now = person.getPlace();
+        System.out.println("현재 " + now + "에 있습니다.");
+
+        if("집".equals(now)) {
+            person.goToOffice("회사");
+        }
     }
 
 }
